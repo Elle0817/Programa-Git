@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de administración - Mi Guía</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <h1>Mi Guía</h1>
+                </div>
+                <div class="menu">
+                    <a href="index.html">Inicio</a>
+                    <a href="funciones.html">Funciones</a>
+                    <a href="planes.html">Planes</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="contacto.html">Contacto</a>
+                    <a href="login.html">Iniciar sesión</a>
+                    <a href="register.html" class="btn-nav">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div style="display:flex; min-height:calc(100vh - 80px);">
+        <aside style="width:250px; background:#0f172a; color:#cbd5e1; padding:30px 0; position:sticky; top:80px; height:calc(100vh - 80px); overflow-y:auto;">
+            <nav style="display:flex; flex-direction:column;">
+                <a href="dashboard-demo.html" style="padding:15px 25px; color:white; text-decoration:none; background:#059669; font-weight:600; border-left:4px solid #059669;">Dashboard</a>
+                <a href="#" style="padding:15px 25px; color:#cbd5e1; text-decoration:none; transition:.3s; display:block;">Clientes</a>
+                <a href="#" style="padding:15px 25px; color:#cbd5e1; text-decoration:none; transition:.3s; display:block;">Reservas</a>
+                <a href="#" style="padding:15px 25px; color:#cbd5e1; text-decoration:none; transition:.3s; display:block;">Servicios</a>
+                <a href="#" style="padding:15px 25px; color:#cbd5e1; text-decoration:none; transition:.3s; display:block;">Empleados</a>
+                <a href="#" style="padding:15px 25px; color:#cbd5e1; text-decoration:none; transition:.3s; display:block;">Reportes</a>
+                <a href="#" style="padding:15px 25px; color:#cbd5e1; text-decoration:none; transition:.3s; display:block;">Configuración</a>
+                <hr style="border:none; border-top:1px solid #334155; margin:20px 0;">
+                <a href="login.html" style="padding:15px 25px; color:#cbd5e1; text-decoration:none; transition:.3s; display:block;">Cerrar sesión</a>
+            </nav>
+        </aside>
+
+        <main style="flex:1; background:#f8fafc; padding:40px;">
+            <div class="container" style="max-width:100%;">
+                <section style="margin-bottom:50px;">
+                    <h2 style="font-size:36px; color:#0f172a; margin-bottom:10px;">Panel de administración</h2>
+                    <p style="color:#64748b; font-size:16px;">Bienvenido. Aquí puedes consultar un resumen de la actividad de tu empresa.</p>
+                </section>
+
+                <section style="margin-bottom:50px;">
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:25px;">
+                        <article style="background:#ffffff; border-radius:16px; padding:30px; box-shadow:0 10px 30px rgba(15,23,42,.08); border-left:4px solid #059669;">
+                            <h3 style="color:#64748b; font-size:14px; margin:0 0 15px 0; font-weight:600; text-transform:uppercase;">Clientes registrados</h3>
+                            <p style="font-size:40px; color:#0f172a; margin:0; font-weight:700;">325</p>
+                            <p style="color:#059669; font-size:13px; margin:10px 0 0 0;">+12 este mes</p>
+                        </article>
+
+                        <article style="background:#ffffff; border-radius:16px; padding:30px; box-shadow:0 10px 30px rgba(15,23,42,.08); border-left:4px solid #0f172a;">
+                            <h3 style="color:#64748b; font-size:14px; margin:0 0 15px 0; font-weight:600; text-transform:uppercase;">Reservas activas</h3>
+                            <p style="font-size:40px; color:#0f172a; margin:0; font-weight:700;">58</p>
+                            <p style="color:#059669; font-size:13px; margin:10px 0 0 0;">4 pendientes de confirmación</p>
+                        </article>
+
+                        <article style="background:#ffffff; border-radius:16px; padding:30px; box-shadow:0 10px 30px rgba(15,23,42,.08); border-left:4px solid #059669;">
+                            <h3 style="color:#64748b; font-size:14px; margin:0 0 15px 0; font-weight:600; text-transform:uppercase;">Servicios disponibles</h3>
+                            <p style="font-size:40px; color:#0f172a; margin:0; font-weight:700;">24</p>
+                            <p style="color:#059669; font-size:13px; margin:10px 0 0 0;">Todos activos</p>
+                        </article>
+
+                        <article style="background:#ffffff; border-radius:16px; padding:30px; box-shadow:0 10px 30px rgba(15,23,42,.08); border-left:4px solid #0f172a;">
+                            <h3 style="color:#64748b; font-size:14px; margin:0 0 15px 0; font-weight:600; text-transform:uppercase;">Ingresos del mes</h3>
+                            <p style="font-size:40px; color:#0f172a; margin:0; font-weight:700;">$18.5M</p>
+                            <p style="color:#059669; font-size:13px; margin:10px 0 0 0;">+8.5% respecto al mes anterior</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section style="margin-bottom:50px;">
+                    <h3 style="font-size:24px; color:#0f172a; margin-bottom:25px; font-weight:700;">Actividad reciente</h3>
+                    <article style="background:#ffffff; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(15,23,42,.08);">
+                        <table style="width:100%; border-collapse:collapse;">
+                            <thead>
+                                <tr style="background:#f1f5f9; border-bottom:2px solid #e2e8f0;">
+                                    <th style="padding:20px; text-align:left; color:#0f172a; font-weight:600; font-size:14px;">Cliente</th>
+                                    <th style="padding:20px; text-align:left; color:#0f172a; font-weight:600; font-size:14px;">Servicio</th>
+                                    <th style="padding:20px; text-align:left; color:#0f172a; font-weight:600; font-size:14px;">Fecha</th>
+                                    <th style="padding:20px; text-align:center; color:#0f172a; font-weight:600; font-size:14px;">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom:1px solid #e2e8f0;">
+                                    <td style="padding:20px; color:#1e293b;">Juan Rodríguez</td>
+                                    <td style="padding:20px; color:#1e293b;">Tour Monserrate</td>
+                                    <td style="padding:20px; color:#1e293b;">2024-07-16</td>
+                                    <td style="padding:20px; text-align:center;"><span style="background:#d1fae5; color:#065f46; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:600;">Confirmada</span></td>
+                                </tr>
+                                <tr style="border-bottom:1px solid #e2e8f0;">
+                                    <td style="padding:20px; color:#1e293b;">María González</td>
+                                    <td style="padding:20px; color:#1e293b;">Visita Monumento</td>
+                                    <td style="padding:20px; color:#1e293b;">2024-07-15</td>
+                                    <td style="padding:20px; text-align:center;"><span style="background:#fef3c7; color:#92400e; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:600;">Pendiente</span></td>
+                                </tr>
+                                <tr style="border-bottom:1px solid #e2e8f0;">
+                                    <td style="padding:20px; color:#1e293b;">Carlos Martínez</td>
+                                    <td style="padding:20px; color:#1e293b;">Paquete aventura</td>
+                                    <td style="padding:20px; color:#1e293b;">2024-07-14</td>
+                                    <td style="padding:20px; text-align:center;"><span style="background:#d1fae5; color:#065f46; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:600;">Confirmada</span></td>
+                                </tr>
+                                <tr style="border-bottom:1px solid #e2e8f0;">
+                                    <td style="padding:20px; color:#1e293b;">Laura Fernández</td>
+                                    <td style="padding:20px; color:#1e293b;">Paseo cicloturismo</td>
+                                    <td style="padding:20px; color:#1e293b;">2024-07-13</td>
+                                    <td style="padding:20px; text-align:center;"><span style="background:#fee2e2; color:#991b1b; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:600;">Cancelada</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:20px; color:#1e293b;">David López</td>
+                                    <td style="padding:20px; color:#1e293b;">Ruta gastronomía</td>
+                                    <td style="padding:20px; color:#1e293b;">2024-07-12</td>
+                                    <td style="padding:20px; text-align:center;"><span style="background:#d1fae5; color:#065f46; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:600;">Confirmada</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                </section>
+
+                <section style="display:grid; grid-template-columns:repeat(auto-fit, minmax(350px, 1fr)); gap:25px; margin-bottom:50px;">
+                    <article style="background:#ffffff; border-radius:16px; padding:30px; box-shadow:0 10px 30px rgba(15,23,42,.08);">
+                        <h3 style="font-size:20px; color:#0f172a; margin-bottom:20px; font-weight:700;">Calendario de reservas</h3>
+                        <div style="background:#f1f5f9; border:2px dashed #cbd5e1; border-radius:12px; padding:40px; text-align:center; min-height:300px; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                            <p style="color:#64748b; font-size:16px; margin:0;">Calendario interactivo de reservas próximas</p>
+                            <p style="color:#94a3b8; font-size:14px; margin-top:10px;">Visualiza la disponibilidad de tus servicios</p>
+                        </div>
+                    </article>
+
+                    <article style="background:#ffffff; border-radius:16px; padding:30px; box-shadow:0 10px 30px rgba(15,23,42,.08);">
+                        <h3 style="font-size:20px; color:#0f172a; margin-bottom:20px; font-weight:700;">Próximas actividades</h3>
+                        <div style="display:flex; flex-direction:column; gap:15px;">
+                            <div style="padding:15px; background:#f1f5f9; border-radius:8px; border-left:4px solid #059669;">
+                                <p style="color:#0f172a; font-weight:600; margin:0 0 5px 0; font-size:14px;">Tour Monserrate</p>
+                                <p style="color:#64748b; margin:0; font-size:13px;">Hoy a las 10:00 a.m.</p>
+                            </div>
+                            <div style="padding:15px; background:#f1f5f9; border-radius:8px; border-left:4px solid #059669;">
+                                <p style="color:#0f172a; font-weight:600; margin:0 0 5px 0; font-size:14px;">Visita museo</p>
+                                <p style="color:#64748b; margin:0; font-size:13px;">Mañana a las 2:00 p.m.</p>
+                            </div>
+                            <div style="padding:15px; background:#f1f5f9; border-radius:8px; border-left:4px solid #059669;">
+                                <p style="color:#0f172a; font-weight:600; margin:0 0 5px 0; font-size:14px;">Paquete aventura</p>
+                                <p style="color:#64748b; margin:0; font-size:13px;">Viernes a las 8:00 a.m.</p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section style="display:grid; grid-template-columns:repeat(auto-fit, minmax(350px, 1fr)); gap:25px; margin-bottom:50px;">
+                    <article style="background:#ffffff; border-radius:16px; padding:30px; box-shadow:0 10px 30px rgba(15,23,42,.08);">
+                        <h3 style="font-size:20px; color:#0f172a; margin-bottom:20px; font-weight:700;">Ingresos mensuales</h3>
+                        <div style="background:#f1f5f9; border:2px dashed #cbd5e1; border-radius:12px; padding:40px; text-align:center; min-height:250px; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                            <p style="color:#64748b; font-size:16px; margin:0;">Gráfico de ingresos</p>
+                            <p style="color:#94a3b8; font-size:14px; margin-top:10px;">Análisis de ingresos por mes</p>
+                        </div>
+                    </article>
+
+                    <article style="background:#ffffff; border-radius:16px; padding:30px; box-shadow:0 10px 30px rgba(15,23,42,.08);">
+                        <h3 style="font-size:20px; color:#0f172a; margin-bottom:20px; font-weight:700;">Reservas mensuales</h3>
+                        <div style="background:#f1f5f9; border:2px dashed #cbd5e1; border-radius:12px; padding:40px; text-align:center; min-height:250px; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                            <p style="color:#64748b; font-size:16px; margin:0;">Gráfico de reservas</p>
+                            <p style="color:#94a3b8; font-size:14px; margin-top:10px;">Tendencia de reservas mensuales</p>
+                        </div>
+                    </article>
+                </section>
+
+                <section style="margin-bottom:50px;">
+                    <h3 style="font-size:24px; color:#0f172a; margin-bottom:25px; font-weight:700;">Accesos rápidos</h3>
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:25px;">
+                        <article style="background:#ffffff; border-radius:16px; padding:30px; box-shadow:0 10px 30px rgba(15,23,42,.08); text-align:center;">
+                            <div style="font-size:48px; margin-bottom:15px;">👥</div>
+                            <h4 style="color:#0f172a; font-size:18px; margin-bottom:15px; font-weight:700;">Registrar cliente</h4>
+                            <button style="background:#059669; color:white; padding:12px 24px; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px;">Acceder</button>
+                        </article>
+
+                        <article style="background:#ffffff; border-radius:16px; padding:30px; box-shadow:0 10px 30px rgba(15,23,42,.08); text-align:center;">
+                            <div style="font-size:48px; margin-bottom:15px;">📅</div>
+                            <h4 style="color:#0f172a; font-size:18px; margin-bottom:15px; font-weight:700;">Crear reserva</h4>
+                            <button style="background:#059669; color:white; padding:12px 24px; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px;">Acceder</button>
+                        </article>
+
+                        <article style="background:#ffffff; border-radius:16px; padding:30px; box-shadow:0 10px 30px rgba(15,23,42,.08); text-align:center;">
+                            <div style="font-size:48px; margin-bottom:15px;">🎯</div>
+                            <h4 style="color:#0f172a; font-size:18px; margin-bottom:15px; font-weight:700;">Agregar servicio</h4>
+                            <button style="background:#059669; color:white; padding:12px 24px; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px;">Acceder</button>
+                        </article>
+
+                        <article style="background:#ffffff; border-radius:16px; padding:30px; box-shadow:0 10px 30px rgba(15,23,42,.08); text-align:center;">
+                            <div style="font-size:48px; margin-bottom:15px;">📊</div>
+                            <h4 style="color:#0f172a; font-size:18px; margin-bottom:15px; font-weight:700;">Ver reportes</h4>
+                            <button style="background:#059669; color:white; padding:12px 24px; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px;">Acceder</button>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Mi Guía</h3>
+                    <p>La plataforma integral para gestionar tu empresa turística de forma eficiente.</p>
+                </div>
+                <div>
+                    <h4>Navegación</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="funciones.html">Funciones</a>
+                    <a href="planes.html">Planes</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <a href="#">Términos de servicio</a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mi Guía. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

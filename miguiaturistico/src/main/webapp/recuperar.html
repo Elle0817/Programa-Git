@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar contraseña - Mi Guía</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <h1>Mi Guía</h1>
+                </div>
+                <div class="menu">
+                    <a href="index.html">Inicio</a>
+                    <a href="funciones.html">Funciones</a>
+                    <a href="planes.html">Planes</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="contacto.html">Contacto</a>
+                    <a href="login.html">Iniciar sesión</a>
+                    <a href="register.html" class="btn-nav">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div style="max-width:500px; margin:0 auto; background:#ffffff; border-radius:16px; padding:50px 40px; box-shadow:0 10px 30px rgba(15,23,42,.08);">
+                    <h2 style="font-size:32px; color:#0f172a; margin-bottom:15px; text-align:center;">¿Olvidaste tu contraseña?</h2>
+                    <p style="text-align:center; color:#64748b; margin-bottom:40px; font-size:16px;">Ingresa el correo electrónico asociado a tu cuenta y te enviaremos un enlace para restablecer tu contraseña.</p>
+
+                    <form method="POST" action="#">
+                        <div style="margin-bottom:30px;">
+                            <label for="correo" style="display:block; margin-bottom:8px; color:#1e293b; font-weight:600; font-size:14px;">Correo Electrónico</label>
+                            <input type="email" id="correo" name="correo" required style="width:100%; padding:12px 15px; border:1px solid #e2e8f0; border-radius:8px; font-family:inherit; font-size:16px;">
+                        </div>
+
+                        <button type="submit" class="btn-primary" style="width:100%; padding:15px 32px; border:none; border-radius:10px; cursor:pointer; font-size:16px; font-weight:600;">Enviar enlace</button>
+                    </form>
+
+                    <div style="margin-top:30px; text-align:center;">
+                        <p style="color:#64748b; font-size:14px; margin:0;"><a href="login.html" style="color:#059669; text-decoration:none; font-weight:600;">Volver al inicio de sesión</a></p>
+                    </div>
+
+                    <div style="margin-top:40px; padding-top:30px; border-top:1px solid #e2e8f0; background:#f8fafc; border-radius:8px; padding:20px;">
+                        <h3 style="font-size:14px; color:#1e293b; margin:0 0 15px 0; font-weight:600;">Información importante</h3>
+                        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+                            <li style="color:#64748b; font-size:13px; display:flex; gap:10px;">
+                                <span style="flex-shrink:0; color:#059669; font-weight:600;">•</span>
+                                <span>El enlace de recuperación expirará en 24 horas por seguridad.</span>
+                            </li>
+                            <li style="color:#64748b; font-size:13px; display:flex; gap:10px;">
+                                <span style="flex-shrink:0; color:#059669; font-weight:600;">•</span>
+                                <span>Revisa la carpeta de spam si no recibes el correo en tu bandeja de entrada.</span>
+                            </li>
+                            <li style="color:#64748b; font-size:13px; display:flex; gap:10px;">
+                                <span style="flex-shrink:0; color:#059669; font-weight:600;">•</span>
+                                <span>Si continúas con problemas, <a href="contacto.html" style="color:#059669; text-decoration:none; font-weight:500;">contacta a nuestro equipo de soporte</a>.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Mi Guía</h3>
+                    <p>La plataforma integral para gestionar tu empresa turística de forma eficiente.</p>
+                </div>
+                <div>
+                    <h4>Navegación</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="funciones.html">Funciones</a>
+                    <a href="planes.html">Planes</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <a href="#">Términos de servicio</a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mi Guía. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

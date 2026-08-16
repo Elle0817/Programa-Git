@@ -1,0 +1,404 @@
+.service-card {
+  width: min(92vw, 430px);
+  overflow: hidden;
+  border: 1px solid #b8c4a3;
+  border-radius: 28px;
+  background: #ffffff;
+  color: #243024;
+  font-family: Arial, sans-serif;
+  box-shadow:
+    0 25px 60px rgba(73, 91, 55, 0.16),
+    0 5px 20px rgba(73, 91, 55, 0.08);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 35px 80px rgba(73, 91, 55, 0.22),
+    0 10px 25px rgba(73, 91, 55, 0.12);
+}
+
+/* Empresa */
+.service-card__company {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 22px;
+  background: linear-gradient(
+    135deg,
+    #eef2e7,
+    #ffffff
+  );
+  border-bottom: 1px solid #e1e6d9;
+}
+
+.company-logo {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid #aebd96;
+  border-radius: 14px;
+  background: #6f8052;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(73, 91, 55, 0.2);
+}
+
+.service-card__company div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.service-card__company span:first-child {
+  color: #7b8575;
+  font-size: 11px;
+}
+
+.service-card__company strong {
+  color: #33402f;
+  font-size: 14px;
+}
+
+.service-status {
+  margin-left: auto;
+  padding: 7px 11px;
+  border: 1px solid #c8d6b6;
+  border-radius: 20px;
+  background: #f2f7ed;
+  color: #58713f;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* MAPA */
+.service-card__map {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      115deg,
+      rgba(238, 242, 231, 0.9),
+      rgba(255, 255, 255, 1)
+    );
+}
+
+/* Líneas decorativas del mapa */
+.service-card__map::before,
+.service-card__map::after {
+  content: '';
+  position: absolute;
+  background: #e5eadc;
+  transform: rotate(-25deg);
+}
+
+.service-card__map::before {
+  width: 140%;
+  height: 1px;
+  top: 45%;
+  left: -20%;
+}
+
+.service-card__map::after {
+  width: 120%;
+  height: 1px;
+  top: 65%;
+  left: -10%;
+  transform: rotate(20deg);
+}
+
+/* Etiqueta */
+.map-label {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  z-index: 5;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #69745f;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+/* Ruta */
+.route {
+  position: absolute;
+  z-index: 2;
+  height: 4px;
+  border-radius: 10px;
+  background: #7c9360;
+  box-shadow: 0 0 8px rgba(124, 147, 96, 0.3);
+  transform-origin: left center;
+}
+
+.route-one {
+  width: 145px;
+  top: 105px;
+  left: 65px;
+  transform: rotate(25deg);
+}
+
+.route-two {
+  width: 145px;
+  top: 165px;
+  left: 190px;
+  transform: rotate(-35deg);
+}
+
+/* Puntos */
+.map-point {
+  position: absolute;
+  z-index: 4;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background: #728958;
+  box-shadow: 0 3px 10px rgba(73, 91, 55, 0.25);
+}
+
+.point-one {
+  top: 96px;
+  left: 58px;
+}
+
+.point-two {
+  top: 151px;
+  left: 182px;
+}
+
+.point-three {
+  right: 55px;
+  bottom: 28px;
+}
+
+/* Persona caminando */
+.walking-person {
+  position: absolute;
+  z-index: 6;
+  top: 95px;
+  left: 55px;
+  font-size: 25px;
+  animation: walkingRoute 5s ease-in-out infinite;
+}
+
+@keyframes walkingRoute {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  35% {
+    transform: translate(125px, 55px);
+  }
+
+  70% {
+    transform: translate(250px, 10px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Etiquetas del mapa */
+.map-location {
+  position: absolute;
+  z-index: 5;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #6b7564;
+  font-size: 10px;
+}
+
+.map-location.start {
+  top: 115px;
+  left: 42px;
+}
+
+.map-location.finish {
+  right: 28px;
+  bottom: 15px;
+}
+
+/* Contenido */
+.service-card__content {
+  padding: 25px;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #fbfcf9 100%
+  );
+}
+
+.service-category {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #edf2e7;
+  color: #62774d;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.service-card__content h2 {
+  margin: 12px 0 8px;
+  color: #293428;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.service-description {
+  margin: 0 0 20px;
+  color: #727a6e;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Puntuaciones */
+.ratings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.rating {
+  padding: 12px;
+  border: 1px solid #e2e7dc;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.rating span {
+  display: block;
+  margin-bottom: 5px;
+  color: #899184;
+  font-size: 11px;
+}
+
+.rating strong {
+  color: #657a4f;
+  font-size: 15px;
+}
+
+/* Información */
+.service-info {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.service-info div {
+  padding: 11px;
+  border-radius: 10px;
+  background: #f2f5ef;
+}
+
+.service-info span {
+  display: block;
+  margin-bottom: 5px;
+  color: #8a9284;
+  font-size: 10px;
+}
+
+.service-info strong {
+  display: block;
+  color: #3b4736;
+  font-size: 12px;
+}
+
+/* Footer */
+.service-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid #e4e8df;
+}
+
+.service-price span,
+.service-price small {
+  display: block;
+  color: #8a9284;
+  font-size: 10px;
+}
+
+.service-price strong {
+  display: block;
+  margin: 3px 0;
+  color: #34442f;
+  font-size: 21px;
+}
+
+/* Botones */
+.service-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.service-actions button {
+  padding: 10px 13px;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.secondary-button {
+  border: 1px solid #cbd5bd;
+  background: #ffffff;
+  color: #60724d;
+}
+
+.primary-button {
+  border: none;
+  background: #6f8052;
+  color: #ffffff;
+  box-shadow: 0 6px 15px rgba(73, 91, 55, 0.2);
+}
+
+.service-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.primary-button:hover {
+  background: #5f7044;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .service-card {
+    width: 94vw;
+  }
+
+  .service-card__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .service-actions {
+    width: 100%;
+  }
+
+  .service-actions button {
+    flex: 1;
+  }
+}

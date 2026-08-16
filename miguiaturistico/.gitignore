@@ -1,0 +1,12 @@
+# Maven
+target/
+
+# Node
+frontend-react/node_modules/
+frontend-react/dist/
+
+# Archivos de entorno
+.env
+
+# Credenciales locales
+src/main/java/com/mycompany/miguiaturistico/Conexion.java

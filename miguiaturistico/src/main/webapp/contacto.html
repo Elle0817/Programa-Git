@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Mi Guía</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <h1>Mi Guía</h1>
+                </div>
+                <div class="menu">
+                    <a href="index.html">Inicio</a>
+                    <a href="funciones.html">Funciones</a>
+                    <a href="planes.html">Planes</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="contacto.html">Contacto</a>
+                    <a href="login.html">Iniciar sesión</a>
+                    <a href="register.html" class="btn-nav">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div>
+                        <span class="hero-tag">Contacto</span>
+                        <h1>Estamos aquí para ayudarte</h1>
+                        <p class="hero-text">Si tienes dudas sobre Mi Guía, nuestros planes o el funcionamiento de la plataforma, estaremos encantados de ayudarte.</p>
+                        <div class="hero-buttons">
+                            <a href="register.html" class="btn-primary">Crear cuenta</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="hero-placeholder">Contacto</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Información de Contacto</h2>
+                <div class="category-grid">
+                    <article class="category-card">
+                        <div class="category-icon">✉️</div>
+                        <h3>Correo Electrónico</h3>
+                        <p><a href="mailto:contacto@miguia.com" style="color:#059669; text-decoration:none;">contacto@miguia.com</a></p>
+                    </article>
+                    <article class="category-card">
+                        <div class="category-icon">📞</div>
+                        <h3>Teléfono</h3>
+                        <p><a href="tel:+573001234567" style="color:#059669; text-decoration:none;">+57 300 123 4567</a></p>
+                    </article>
+                    <article class="category-card">
+                        <div class="category-icon">⏰</div>
+                        <h3>Horario de Atención</h3>
+                        <p>Lunes a viernes<br>8:00 a.m. - 6:00 p.m.</p>
+                    </article>
+                    <article class="category-card">
+                        <div class="category-icon">📍</div>
+                        <h3>Ubicación</h3>
+                        <p>Bogotá, Colombia</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Envíanos un Mensaje</h2>
+                <form method="POST" action="#" style="max-width:700px; margin:40px auto; background:#ffffff; border-radius:16px; padding:40px; box-shadow:0 10px 30px rgba(15,23,42,.08);">
+                    <div style="margin-bottom:25px;">
+                        <label for="nombre" style="display:block; margin-bottom:8px; color:#1e293b; font-weight:600;">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" required style="width:100%; padding:12px 15px; border:1px solid #e2e8f0; border-radius:8px; font-family:inherit; font-size:16px;">
+                    </div>
+
+                    <div style="margin-bottom:25px;">
+                        <label for="correo" style="display:block; margin-bottom:8px; color:#1e293b; font-weight:600;">Correo Electrónico</label>
+                        <input type="email" id="correo" name="correo" required style="width:100%; padding:12px 15px; border:1px solid #e2e8f0; border-radius:8px; font-family:inherit; font-size:16px;">
+                    </div>
+
+                    <div style="margin-bottom:25px;">
+                        <label for="empresa" style="display:block; margin-bottom:8px; color:#1e293b; font-weight:600;">Empresa</label>
+                        <input type="text" id="empresa" name="empresa" style="width:100%; padding:12px 15px; border:1px solid #e2e8f0; border-radius:8px; font-family:inherit; font-size:16px;">
+                    </div>
+
+                    <div style="margin-bottom:25px;">
+                        <label for="asunto" style="display:block; margin-bottom:8px; color:#1e293b; font-weight:600;">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required style="width:100%; padding:12px 15px; border:1px solid #e2e8f0; border-radius:8px; font-family:inherit; font-size:16px;">
+                    </div>
+
+                    <div style="margin-bottom:30px;">
+                        <label for="mensaje" style="display:block; margin-bottom:8px; color:#1e293b; font-weight:600;">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="6" required style="width:100%; padding:12px 15px; border:1px solid #e2e8f0; border-radius:8px; font-family:inherit; font-size:16px; resize:vertical;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width:100%; padding:15px 32px; border:none; border-radius:10px; cursor:pointer;">Enviar mensaje</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <div style="max-width:800px; margin:60px auto;">
+                    <article style="margin-bottom:40px; padding:30px; background:#ffffff; border-radius:16px; box-shadow:0 10px 30px rgba(15,23,42,.08);">
+                        <h3 style="color:#0f172a; margin-bottom:15px; font-size:20px;">¿Cómo puedo crear una cuenta?</h3>
+                        <p style="color:#64748b; line-height:1.6;">Crear una cuenta es muy sencillo. Solo debes hacer clic en el botón "Registrarse" en la esquina superior derecha de nuestro sitio, completar tus datos básicos y seguir el proceso de verificación. En minutos estarás listo para empezar a usar Mi Guía.</p>
+                    </article>
+
+                    <article style="margin-bottom:40px; padding:30px; background:#ffffff; border-radius:16px; box-shadow:0 10px 30px rgba(15,23,42,.08);">
+                        <h3 style="color:#0f172a; margin-bottom:15px; font-size:20px;">¿Puedo cambiar de plan posteriormente?</h3>
+                        <p style="color:#64748b; line-height:1.6;">Sí, puedes cambiar tu plan en cualquier momento según tus necesidades. Si actualizas a un plan superior, los cambios se aplicarán inmediatamente y se ajustará el pago proporcionalmente. Si deseas cambiar a un plan inferior, los cambios se efectuarán en tu próximo período de facturación.</p>
+                    </article>
+
+                    <article style="margin-bottom:40px; padding:30px; background:#ffffff; border-radius:16px; box-shadow:0 10px 30px rgba(15,23,42,.08);">
+                        <h3 style="color:#0f172a; margin-bottom:15px; font-size:20px;">¿La plataforma funciona desde dispositivos móviles?</h3>
+                        <p style="color:#64748b; line-height:1.6;">Absolutamente. Mi Guía está diseñada para ser totalmente responsiva y funciona perfectamente en smartphones, tablets y computadoras. Puedes acceder a tu cuenta desde cualquier dispositivo con conexión a internet.</p>
+                    </article>
+
+                    <article style="padding:30px; background:#ffffff; border-radius:16px; box-shadow:0 10px 30px rgba(15,23,42,.08);">
+                        <h3 style="color:#0f172a; margin-bottom:15px; font-size:20px;">¿Cómo puedo comunicarme con soporte?</h3>
+                        <p style="color:#64748b; line-height:1.6;">Puedes contactarnos a través de múltiples canales: enviando un correo electrónico a contacto@miguia.com, llamando al +57 300 123 4567 en horario de atención (lunes a viernes de 8:00 a.m. a 6:00 p.m.), o completando el formulario de contacto en esta página. Nuestro equipo responderá lo antes posible.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <div class="cta-box">
+                    <h2>¿Listo para digitalizar tu empresa turística?</h2>
+                    <p>Comienza hoy mismo y descubre cómo Mi Guía puede ayudarte a optimizar la gestión de tu negocio.</p>
+                    <a href="register.html" class="cta-button">Crear cuenta</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Mi Guía</h3>
+                    <p>La plataforma integral para gestionar tu empresa turística de forma eficiente.</p>
+                </div>
+                <div>
+                    <h4>Navegación</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="funciones.html">Funciones</a>
+                    <a href="planes.html">Planes</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <a href="#">Términos de servicio</a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mi Guía. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

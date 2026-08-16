@@ -1,0 +1,837 @@
+/* ==========================================================
+   MI GUÍA
+   Plataforma para Empresas de Turismo
+   styles.css
+   Parte 1 de 2
+========================================================== */
+
+/*==============================
+=            RESET            =
+==============================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background:#f8fafc;
+
+    color:#1e293b;
+
+    line-height:1.6;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+/*==============================
+=         VARIABLES           =
+==============================*/
+
+:root{
+
+    --primary:#059669;
+
+    --primary-dark:#047857;
+
+    --secondary:#0f172a;
+
+    --gray:#64748b;
+
+    --light:#f8fafc;
+
+    --white:#ffffff;
+
+    --border:#e2e8f0;
+
+    --shadow:0 10px 30px rgba(15,23,42,.08);
+
+    --radius:18px;
+
+}
+
+/*==============================
+=        CONTENEDORES         =
+==============================*/
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+}
+
+.section{
+
+    padding:90px 0;
+}
+
+.section-title{
+
+    font-size:42px;
+
+    text-align:center;
+
+    color:var(--secondary);
+
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+
+    max-width:700px;
+
+    margin:auto;
+
+    margin-bottom:60px;
+
+    text-align:center;
+
+    color:var(--gray);
+
+    font-size:18px;
+}
+
+/*==============================
+=          HEADER             =
+==============================*/
+
+.header{
+
+    position:sticky;
+
+    top:0;
+
+    background:var(--white);
+
+    border-bottom:1px solid var(--border);
+
+    z-index:1000;
+}
+
+.nav{
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:var(--primary);
+}
+
+/*==============================
+=            MENU             =
+==============================*/
+
+.menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+}
+
+.menu a{
+
+    color:#334155;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.menu a:hover{
+
+    color:var(--primary);
+}
+
+.btn-nav{
+
+    background:var(--primary);
+
+    color:white !important;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.btn-nav:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+}
+
+/*==============================
+=            HERO             =
+==============================*/
+
+.hero{
+
+    position:relative;
+
+    min-height:700px;
+
+    display:flex;
+
+    align-items:center;
+
+    background-image:url("https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=2070&auto=format&fit=crop");
+
+    background-size:cover;
+
+    background-position:center;
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(15,23,42,.72);
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    margin-bottom:25px;
+
+    font-size:14px;
+}
+
+.hero h1{
+
+    color:white;
+
+    font-size:60px;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+}
+
+.hero-text{
+
+    color:#dbe4ee;
+
+    font-size:20px;
+
+    max-width:620px;
+}
+
+/*==============================
+=        HERO BOTONES         =
+==============================*/
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:40px;
+}
+
+.btn-primary,
+.btn-secondary{
+
+    display:inline-block;
+
+    padding:15px 32px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:white;
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+
+    border:2px solid white;
+
+    color:white;
+}
+
+.btn-secondary:hover{
+
+    background:white;
+
+    color:var(--primary);
+}
+
+/*==============================
+=      HERO ILUSTRACIÓN       =
+==============================*/
+
+.hero-image{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.hero-placeholder{
+
+    width:100%;
+
+    max-width:430px;
+
+    height:320px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    border:2px dashed rgba(255,255,255,.35);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    backdrop-filter:blur(6px);
+}
+
+/*==============================
+=        RESPONSIVE           =
+==============================*/
+
+@media(max-width:900px){
+
+    .nav{
+
+        flex-direction:column;
+
+        height:auto;
+
+        padding:20px 0;
+    }
+
+    .menu{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:18px;
+
+        margin-top:15px;
+    }
+
+    .hero{
+
+        min-height:auto;
+
+        padding:100px 0;
+    }
+
+    .hero-content{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+    }
+
+    .hero-text{
+
+        margin:auto;
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+    }
+
+    .hero h1{
+
+        font-size:42px;
+    }
+
+    .hero-placeholder{
+
+        margin-top:40px;
+    }
+
+    .section-title{
+
+        font-size:34px;
+    }
+
+}/* ==========================================================
+   MI GUÍA
+   styles.css
+   Parte 2 de 2
+==========================================================*/
+
+/*==============================
+=          FUNCIONES          =
+==============================*/
+
+.category-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.category-card{
+
+    background:var(--white);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:35px 30px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+}
+
+.category-card:hover{
+
+    transform:translateY(-8px);
+}
+
+.category-icon{
+
+    font-size:48px;
+
+    margin-bottom:20px;
+}
+
+.category-card h3{
+
+    color:var(--secondary);
+
+    margin-bottom:15px;
+
+    font-size:24px;
+}
+
+.category-card p{
+
+    color:var(--gray);
+}
+
+/*==============================
+=         BENEFICIOS          =
+==============================*/
+
+.benefits{
+
+    background:#eef8f4;
+}
+
+.benefits-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+}
+
+.benefit-card{
+
+    background:white;
+
+    padding:28px;
+
+    border-radius:16px;
+
+    box-shadow:var(--shadow);
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:#334155;
+
+    transition:.3s;
+}
+
+.benefit-card:hover{
+
+    transform:translateY(-6px);
+
+    border-left:6px solid var(--primary);
+}
+
+/*==============================
+=      CÓMO FUNCIONA         =
+==============================*/
+
+.steps-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+}
+
+.step-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+    padding:35px;
+
+    text-align:center;
+}
+
+.step-number{
+
+    width:65px;
+
+    height:65px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:26px;
+
+    font-weight:bold;
+}
+
+.step-card h3{
+
+    margin-bottom:15px;
+
+    color:var(--secondary);
+}
+
+.step-card p{
+
+    color:var(--gray);
+}
+
+/*==============================
+=            PLANES          =
+==============================*/
+
+.plans-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.plan-card{
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:45px 30px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    box-shadow:var(--shadow);
+}
+
+.plan-card:hover{
+
+    transform:translateY(-8px);
+}
+
+.plan-card h3{
+
+    color:var(--secondary);
+
+    font-size:28px;
+
+    margin-bottom:20px;
+}
+
+.plan-card p{
+
+    color:var(--gray);
+}
+
+.featured{
+
+    border:2px solid var(--primary);
+
+    transform:scale(1.04);
+}
+
+.featured:hover{
+
+    transform:scale(1.06);
+}
+
+/*==============================
+=             CTA            =
+==============================*/
+
+.cta{
+
+    background:linear-gradient(135deg,#047857,#059669);
+}
+
+.cta-box{
+
+    text-align:center;
+
+    color:white;
+}
+
+.cta-box h2{
+
+    font-size:44px;
+
+    margin-bottom:20px;
+}
+
+.cta-box p{
+
+    max-width:700px;
+
+    margin:0 auto 35px;
+
+    font-size:19px;
+
+    color:#d9fff2;
+}
+
+.cta-button{
+
+    display:inline-block;
+
+    background:white;
+
+    color:var(--primary);
+
+    padding:16px 35px;
+
+    border-radius:12px;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.cta-button:hover{
+
+    background:#ecfdf5;
+
+    transform:translateY(-3px);
+}
+
+/*==============================
+=           FOOTER           =
+==============================*/
+
+.footer{
+
+    background:#0f172a;
+
+    color:#cbd5e1;
+
+    padding:70px 0 20px;
+}
+
+.footer-content{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:60px;
+}
+
+.footer-content h3{
+
+    color:white;
+
+    margin-bottom:20px;
+}
+
+.footer-content h4{
+
+    color:white;
+
+    margin-bottom:20px;
+}
+
+.footer-content p{
+
+    color:#94a3b8;
+}
+
+.footer-content a{
+
+    display:block;
+
+    color:#94a3b8;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+}
+
+.footer-content a:hover{
+
+    color:white;
+}
+
+.footer-bottom{
+
+    margin-top:50px;
+
+    padding-top:20px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    color:#94a3b8;
+}
+
+/*==============================
+=     RESPONSIVE FINAL       =
+==============================*/
+
+@media(max-width:900px){
+
+    .category-grid,
+    .benefits-grid,
+    .steps-grid,
+    .plans-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .footer-content{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+    }
+
+    .cta-box h2{
+
+        font-size:34px;
+    }
+
+    .cta-box p{
+
+        font-size:17px;
+    }
+
+}

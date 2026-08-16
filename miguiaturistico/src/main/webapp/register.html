@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de Usuario - Mi Guía Turístico</title>
+  
+  <link rel="stylesheet" href="styles.css" />
+  
+  <style>
+    .register-section {
+      background-color: #f8fafc;
+      min-height: calc(100vh - 160px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .form-container {
+      width: 100%;
+      max-width: 500px;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 22px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #334155;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      font-size: 16px;
+      color: #1e293b;
+      outline: none;
+      transition: border-color 0.3s;
+      background-color: #ffffff;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #059669;
+    }
+    
+    /* Contenedor especial para alinear el código de país y el teléfono */
+    .phone-container {
+      display: flex;
+      gap: 10px;
+    }
+    .phone-container select {
+      flex: 0 0 140px; /* Ancho ajustado para códigos más largos */
+    }
+    .phone-container input {
+      flex: 1; 
+    }
+
+    .btn-submit {
+      width: 100%;
+      background-color: #059669;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 16px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+    .btn-submit:hover {
+      background-color: #047857;
+    }
+
+    /* Estilo para ocultar el campo "Other" inicialmente */
+    #other_nationality_group {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav">
+
+            <div class="logo">
+                Mi Guía
+            </div>
+
+            <nav class="menu">
+                <a href="index.html">Inicio</a>
+                <a href="funciones.html">Funciones</a>
+                <a href="planes.html">Planes</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="login.html">Iniciar sesión</a>
+                <a href="register.html" class="btn-nav">Registrarse</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Aquí continúa tu formulario de registro -->
+
+    </main>
+
+</body>
+
+  <main>
+    <section class="section register-section">
+      <div class="container">
+        <h2 class="section-title">Registro de Usuario</h2>
+        <p class="section-subtitle">Crea tu cuenta para comenzar a administrar tu negocio turístico.</p>
+
+        <div class="form-container">
+          <form action="RegisterServlet" method="POST">
+            
+            <div class="form-group">
+              <label>Tipo de Documento:</label>
+              <select name="document_type" required>
+                <option value="" disabled selected>Seleccione tipo de documento</option>
+                <option value="National ID">Cédula de Ciudadanía</option>
+                <option value="Passport">Pasaporte</option>
+                <option value="Foreign ID">Cédula de Extranjería</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Número de Documento:</label>
+              <input type="text" name="document_number" placeholder="Ej. 1020304050" 
+                     pattern="[0-9]+" title="El documento solo debe contener números" required>
+            </div>
+
+            <div class="form-group">
+              <label>Nombres:</label>
+              <input type="text" name="first_name" placeholder="Juan" required>
+            </div>
+
+            <div class="form-group">
+              <label>Apellidos:</label>
+              <input type="text" name="last_name" placeholder="Pérez" required>
+            </div>
+
+            <div class="form-group">
+              <label>Nacionalidad:</label>
+              <select name="nationality" id="nationality_select" required>
+                <option value="" disabled selected>Seleccione nacionalidad</option>
+                <option value="Colombian">Colombiana</option>
+                <option value="Mexican">Mexicana</option>
+                <option value="Argentinian">Argentina</option>
+                <option value="Peruvian">Peruana</option>
+                <option value="Chilean">Chilena</option>
+                <option value="Brazilian">Brasileña</option>
+                <option value="Ecuadorian">Ecuatoriana</option>
+                <option value="Venezuelan">Venezolana</option>
+                <option value="Bolivian">Boliviana</option>
+                <option value="Costa Rican">Costarricense</option>
+                <option value="Panamanian">Panameña</option>
+                <option value="Japanese">Japonesa</option>
+                <option value="Chinese">China</option>
+                <option value="South Korean">Surcoreana</option>
+                <option value="Indian">India</option>
+                <option value="Thai">Tailandesa</option>
+                <option value="Vietnamese">Vietnamita</option>
+                <option value="American">Estadounidense</option>
+                <option value="Spanish">Española</option>
+                <option value="Other">Otro...</option>
+              </select>
+
+              <div id="other_nationality_group">
+                <input type="text" id="other_nationality" name="other_nationality" 
+                       placeholder="Por favor, especifique su nacionalidad" 
+                       pattern="[A-Za-zÀ-ÿ\s]+" 
+                       title="Solo se permiten letras y espacios">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Correo Electrónico:</label>
+              <input type="email" name="email" placeholder="juan.perez@ejemplo.com" 
+                     pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" 
+                     title="Debe incluir un @ y un dominio válido (ej. .com, .co)" required>
+            </div>
+
+            <div class="form-group">
+              <label>Número de Teléfono:</label>
+              <div class="phone-container">
+                <select name="country_code" required>
+                  <option value="+57" selected>Colombia (+57)</option>
+                  <option value="+52">México (+52)</option>
+                  <option value="+54">Argentina (+54)</option>
+                  <option value="+51">Perú (+51)</option>
+                  <option value="+56">Chile (+56)</option>
+                  <option value="+55">Brasil (+55)</option>
+                  <option value="+593">Ecuador (+593)</option>
+                  <option value="+58">Venezuela (+58)</option>
+                  <option value="+591">Bolivia (+591)</option>
+                  <option value="+506">Costa Rica (+506)</option>
+                  <option value="+507">Panamá (+507)</option>
+                  <option value="+81">Japón (+81)</option>
+                  <option value="+86">China (+86)</option>
+                  <option value="+82">Corea del Sur (+82)</option>
+                  <option value="+91">India (+91)</option>
+                  <option value="+66">Tailandia (+66)</option>
+                  <option value="+84">Vietnam (+84)</option>
+                  <option value="+1">EE. UU. / Canadá (+1)</option>
+                  <option value="+34">España (+34)</option>
+                </select>
+                <input type="tel" name="phone" placeholder="3001234567" 
+                       pattern="[0-9]+" 
+                       title="Solo se permiten números, sin espacios ni símbolos" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Registrar Cuenta</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 Mi Guía Turístico. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nationalitySelect = document.getElementById('nationality_select');
+    const otherGroup = document.getElementById('other_nationality_group');
+    const otherInput = document.getElementById('other_nationality');
+
+    // 1. Mostrar/Ocultar campo de texto para "Otro..."
+    nationalitySelect.addEventListener('change', function() {
+      if (this.value === 'Other') {
+        otherGroup.style.display = 'block';
+        otherInput.required = true;
+      } else {
+        otherGroup.style.display = 'none';
+        otherInput.required = false;
+        otherInput.value = ''; 
+        otherInput.setCustomValidity(''); 
+      }
+    });
+
+    // 2. Validar dinámicamente que lo que escriban no exista ya en la lista (tanto texto como valor)
+    otherInput.addEventListener('input', function() {
+      const typedValue = this.value.trim().toLowerCase();
+      let existsInList = false;
+      
+      const options = nationalitySelect.options;
+      for (let i = 0; i < options.length; i++) {
+        const optionText = options[i].text.toLowerCase();
+        const optionVal = options[i].value.toLowerCase();
+        
+        // Compara contra el texto visual en español ("colombiana") y contra el valor interno ("colombian")
+        if (optionVal !== 'other' && (optionText === typedValue || optionVal === typedValue)) {
+          existsInList = true;
+          break;
+        }
+      }
+
+      if (existsInList) {
+        this.setCustomValidity('Esta nacionalidad ya se encuentra en la lista. Por favor, selecciónela directamente del menú.');
+      } else {
+        this.setCustomValidity('');
+      }
+    });
+  </script>
+</body>
+</html>
