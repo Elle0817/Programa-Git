@@ -1,0 +1,868 @@
+/* =========================================
+   MI GUÍA TURÍSTICO
+   Estilos generales
+========================================= */
+
+:root {
+    --azul: #243b64;
+    --azul-oscuro: #172844;
+    --violeta: #6554a4;
+    --violeta-claro: #f0edfa;
+    --fondo: #f4f6fb;
+    --blanco: #ffffff;
+    --texto: #263247;
+    --texto-secundario: #6b7280;
+    --borde: #e2e7f0;
+    --radio: 16px;
+    --sombra: 0 5px 18px rgba(28, 43, 73, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 320px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    padding: 10px 15px;
+    border: 1px solid var(--azul);
+    border-radius: 9px;
+    background: var(--azul);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--azul-oscuro);
+}
+
+button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+a {
+    color: var(--violeta);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   MENÚ LATERAL
+========================================= */
+
+body > aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 28px 18px;
+    overflow-y: auto;
+    background: var(--azul-oscuro);
+    color: white;
+}
+
+body > aside > div:first-child {
+    padding: 0 10px 28px;
+}
+
+body > aside h1 {
+    margin: 0;
+    color: white;
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+body > aside p {
+    margin-top: 7px;
+    color: #c3cce0;
+    font-size: 12px;
+}
+
+body > aside nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body > aside nav a,
+body > aside > div:last-child a {
+    display: block;
+    padding: 11px 13px;
+    border-radius: 9px;
+    color: #e6eaf4;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+body > aside nav a:hover,
+body > aside nav a[aria-current="page"],
+body > aside > div:last-child a:hover {
+    background: rgba(255, 255, 255, 0.13);
+    color: white;
+    text-decoration: none;
+}
+
+body > aside > div:last-child {
+    margin-top: auto;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+========================================= */
+
+body > main {
+    width: calc(100% - 250px);
+    min-width: 0;
+    margin-left: 250px;
+    padding: 32px;
+}
+
+main > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    margin-bottom: 28px;
+}
+
+main > header > div:first-child > p:first-child {
+    margin-bottom: 8px;
+    color: var(--violeta);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+main > header h2 {
+    margin: 0;
+    color: var(--azul-oscuro);
+    font-size: clamp(24px, 2.5vw, 32px);
+    line-height: 1.2;
+}
+
+main > header > div:first-child > p:last-child {
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+main > header > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+main > header > div:last-child button {
+    border-color: var(--borde);
+    background: white;
+    color: var(--azul);
+}
+
+/* =========================================
+   TARJETAS E INDICADORES
+========================================= */
+
+main > section:first-of-type {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+    margin-bottom: 25px;
+}
+
+main > section:first-of-type > h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+    color: var(--azul-oscuro);
+    font-size: 17px;
+}
+
+main > section:first-of-type article {
+    position: relative;
+    min-width: 0;
+    padding: 22px;
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+}
+
+main > section:first-of-type article::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    background: var(--violeta);
+    content: "";
+}
+
+main > section:first-of-type article:nth-of-type(2)::after {
+    background: #4d9b87;
+}
+
+main > section:first-of-type article:nth-of-type(3)::after {
+    background: #f0b54a;
+}
+
+main > section:first-of-type article:nth-of-type(4)::after {
+    background: #e47b94;
+}
+
+main > section:first-of-type article h3 {
+    margin: 0;
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+main > section:first-of-type article p:first-of-type {
+    margin: 15px 0 5px;
+    color: var(--azul);
+    font-size: clamp(23px, 2vw, 31px);
+    font-weight: 800;
+}
+
+main > section:first-of-type article p:last-child {
+    margin: 0;
+    color: var(--texto-secundario);
+    font-size: 11px;
+}
+
+/* =========================================
+   PANELES Y SECCIONES
+========================================= */
+
+main > section:nth-of-type(2) {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 26px;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+}
+
+main > section:not(:first-of-type) {
+    min-width: 0;
+}
+
+main section > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 23px;
+}
+
+main section > header h2 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+main section > header p {
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+/* =========================================
+   FORMULARIOS Y FILTROS
+========================================= */
+
+main section > form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 0 22px;
+}
+
+input,
+select,
+textarea {
+    max-width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid #d7deea;
+    border-radius: 9px;
+    outline: none;
+    background: white;
+    color: var(--texto);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--violeta);
+    box-shadow: 0 0 0 3px rgba(101, 84, 164, 0.12);
+}
+
+main section > form input[type="search"],
+main section > form input[type="text"] {
+    flex: 1 1 220px;
+    min-width: 180px;
+}
+
+main section > form select {
+    flex: 0 1 180px;
+    min-width: 145px;
+}
+
+main section > form button[type="reset"] {
+    border-color: var(--borde);
+    background: white;
+    color: var(--azul);
+}
+
+main form label {
+    color: var(--texto);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+main form textarea {
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* =========================================
+   TABLAS
+========================================= */
+
+main section > div:has(> table) {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    border: 1px solid #edf0f5;
+    border-radius: 11px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+    font-size: 12px;
+}
+
+table caption {
+    padding: 14px;
+    color: var(--azul);
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+}
+
+thead {
+    background: #f6f7fb;
+}
+
+th,
+td {
+    padding: 14px 13px;
+    border-bottom: 1px solid #edf0f5;
+    vertical-align: middle;
+}
+
+th {
+    color: #59657a;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+tbody tr:hover {
+    background: #fafaff;
+}
+
+td button {
+    margin: 2px;
+    padding: 7px 10px;
+    border: 1px solid var(--borde);
+    background: white;
+    color: var(--azul);
+    font-size: 11px;
+}
+
+td button:hover {
+    border-color: var(--violeta);
+    background: var(--violeta-claro);
+    color: var(--azul-oscuro);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* =========================================
+   PIE DE SECCIÓN Y PAGINACIÓN
+========================================= */
+
+main section > footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 17px;
+}
+
+main section > footer p,
+main > footer p {
+    color: var(--texto-secundario);
+    font-size: 11px;
+}
+
+main section > footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+main section > footer nav button[aria-current="page"] {
+    border-color: var(--violeta);
+    background: var(--violeta);
+    color: white;
+}
+
+main > footer {
+    padding: 25px 0 5px;
+    text-align: center;
+}
+
+/* =========================================
+   MODAL DE SERVICIOS
+========================================= */
+
+#modal-servicio {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;
+    background: rgba(18, 29, 49, 0.58);
+}
+
+#modal-servicio[hidden] {
+    display: none !important;
+}
+
+.contenido-modal {
+    width: min(100%, 560px);
+    padding: 28px;
+    border-radius: var(--radio);
+    background: white;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+}
+
+.contenido-modal h2 {
+    margin-top: 0;
+    color: var(--azul-oscuro);
+    font-size: 22px;
+}
+
+#formulario-servicio {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+#formulario-servicio label {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#formulario-servicio input,
+#formulario-servicio select {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+#formulario-servicio .acciones-modal {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#formulario-servicio #cancelar-servicio {
+    border-color: var(--borde);
+    background: white;
+    color: var(--azul);
+}
+
+/* =========================================
+   CALENDARIO
+========================================= */
+
+main table td time {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 25px;
+    min-height: 25px;
+    border-radius: 50%;
+    color: var(--azul);
+    font-weight: 700;
+}
+
+main table td p {
+    margin: 5px 0 0;
+    padding: 4px 6px;
+    border-radius: 5px;
+    background: var(--violeta-claro);
+    color: var(--violeta);
+    font-size: 10px;
+}
+
+/* =========================================
+   DISEÑO ADAPTABLE
+========================================= */
+
+@media (max-width: 1250px) {
+    body > aside {
+        width: 225px;
+    }
+
+    body > main {
+        width: calc(100% - 225px);
+        margin-left: 225px;
+        padding: 26px;
+    }
+
+    main > section:first-of-type {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    body > aside {
+        position: static;
+        width: 100%;
+        padding: 18px;
+    }
+
+    body > aside > div:first-child {
+        padding-bottom: 15px;
+    }
+
+    body > aside nav ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+    }
+
+    body > aside > div:last-child {
+        margin-top: 12px;
+        padding-top: 10px;
+    }
+
+    body > main {
+        width: 100%;
+        margin-left: 0;
+        padding: 22px;
+    }
+
+    main > header,
+    main section > header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    main > section:nth-of-type(2) {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    body > main {
+        padding: 15px;
+    }
+
+    main > section:first-of-type {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    main > section:first-of-type article {
+        padding: 17px;
+    }
+
+    main section > form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    main section > form input,
+    main section > form select,
+    main section > form button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    main > section:nth-of-type(2) {
+        padding: 16px;
+    }
+
+    .contenido-modal {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 430px) {
+    main > section:first-of-type {
+        grid-template-columns: 1fr;
+    }
+
+    body > aside nav a {
+        padding: 10px;
+        font-size: 11px;
+    }
+}
+
+/* =========================================
+   IMPRESIÓN DE REPORTES
+========================================= */
+
+@media print {
+    body {
+        background: white;
+    }
+
+    body > aside {
+        display: none;
+    }
+
+    body > main {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+
+    button,
+    main > header > div:last-child {
+        display: none !important;
+    }
+
+    main > section:nth-of-type(2),
+    main > section:first-of-type article {
+        box-shadow: none;
+    }
+}
+
+/* =========================================
+   AJUSTE DEL CATÁLOGO DE SERVICIOS
+========================================= */
+
+main > section:nth-of-type(2) > #formulario-filtros {
+    display: flex;
+    position: static;
+    float: none;
+    clear: both;
+    width: 100%;
+    max-width: 100%;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 0 22px;
+}
+
+main > section:nth-of-type(2) > #formulario-filtros > input[type="search"],
+main > section:nth-of-type(2) > #formulario-filtros > input[type="text"] {
+    flex: 1 1 220px;
+    min-width: 180px;
+}
+
+main > section:nth-of-type(2) > #formulario-filtros > select {
+    flex: 0 1 180px;
+    min-width: 150px;
+}
+
+main > section:nth-of-type(2) > div:has(> table) {
+    display: block;
+    position: static;
+    float: none;
+    clear: both;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+}
+
+main > section:nth-of-type(2) > div:has(> table) > table {
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+    main > section:nth-of-type(2) > #formulario-filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    main > section:nth-of-type(2) > #formulario-filtros > input,
+    main > section:nth-of-type(2) > #formulario-filtros > select,
+    main > section:nth-of-type(2) > #formulario-filtros > button {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+#mensaje-clientes {
+    min-height: 1.4em;
+    margin: 0.75rem 0;
+}
+
+#mensaje-clientes[data-tipo="error"] { color: #a12622; }
+#mensaje-clientes[data-tipo="success"] { color: #176b3a; }
+
+.panel-cliente {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid #d7e0e8;
+    border-radius: 0.75rem;
+    background: #fff;
+}
+
+.panel-cliente[hidden] { display: none; }
+
+#formulario-cliente {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5rem;
+    max-width: 42rem;
+}
+
+#formulario-cliente input,
+#formulario-cliente textarea {
+    width: 100%;
+    padding: 0.65rem;
+}
+
+.acciones-formulario-cliente {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+[hidden] { display: none !important; }
+
+#mensaje-pagina {
+    min-height: 1.4em;
+    margin: 0.75rem 0;
+}
+#mensaje-pagina[data-tipo="error"] { color: #a12622; }
+#mensaje-pagina[data-tipo="success"] { color: #176b3a; }
+
+.panel-modulo {
+    margin: 1rem 0;
+    padding: 1.25rem;
+    border: 1px solid #d7e0e8;
+    border-radius: 0.75rem;
+    background: #fff;
+}
+.panel-modulo form {
+    display: grid;
+    gap: 0.55rem;
+    max-width: 44rem;
+}
+.panel-modulo input,
+.panel-modulo select,
+.panel-modulo textarea,
+.filtros-modulo input,
+.filtros-modulo select {
+    padding: 0.65rem;
+    max-width: 100%;
+}
+.panel-modulo textarea { resize: vertical; }
+.acciones-panel { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-top: 0.75rem; }
+.filtros-modulo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 0.65rem;
+    margin: 1rem 0;
+}
+.tabla-contenedor { width: 100%; overflow-x: auto; }
+.tabla-contenedor table { min-width: 680px; }
+.tabla-contenedor .calendario-tabla { min-width: 850px; }
+.calendario-tabla td { min-width: 7rem; height: 7rem; vertical-align: top; }
+.calendario-tabla td.dia-otro-mes { opacity: 0.55; }
+.calendario-tabla td.dia-seleccionado { outline: 2px solid #2d6b4f; outline-offset: -2px; }
+.dia-calendario { min-width: 2rem; padding: 0.15rem 0.35rem; }
+.evento-calendario {
+    display: block;
+    margin-top: 0.25rem;
+    padding: 0.2rem 0.3rem;
+    border-radius: 0.3rem;
+    background: #eef3f8;
+    font-size: 0.75rem;
+    overflow-wrap: anywhere;
+}
+.evento-calendario.evento-actividad {
+    width: 100%;
+    border: 0;
+    border-left: 3px solid #6741a5;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+.evento-calendario.evento-actividad.estado-realizada { border-left-color: #4770a8; }
+.evento-calendario.evento-actividad.estado-cancelada { border-left-color: #a12622; }
+.leyenda-calendario { display: flex; flex-wrap: wrap; gap: 1rem; padding-left: 1.25rem; }
+.evento-calendario.estado-pendiente { border-left: 3px solid #c18b00; }
+.evento-calendario.estado-confirmada { border-left: 3px solid #24834e; }
+.evento-calendario.estado-completada { border-left: 3px solid #4770a8; }
+.evento-calendario.estado-cancelada { border-left: 3px solid #a12622; }
+button:disabled { cursor: wait; opacity: 0.65; }
+.boton-enlace { display: inline-block; align-self: start; }
+@media (max-width: 800px) {
+    .filtros-modulo { flex-direction: column; align-items: stretch; }
+    .filtros-modulo input, .filtros-modulo select, .filtros-modulo button { width: 100%; }
+}
+

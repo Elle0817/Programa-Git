@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es"><head><base href="/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Indicadores reales de reservas y costos."><title>Reportes | Mi Guía Turístico</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<aside><div><h1>Mi Guía Turístico</h1><p>Panel de gestión</p></div><nav aria-label="Menú principal"><ul>
+<li><a href="index.html">Dashboard</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="reservas.html">Reservas</a></li><li><a href="clientes.html">Clientes</a></li><li><a href="costos.html">Costos</a></li><li><a href="calendario.html">Calendario</a></li><li><a href="reportes.html" aria-current="page">Reportes</a></li></ul></nav><div><a href="configuracion.html">Configuración</a></div></aside>
+<main><header><div><p>ADMINISTRACIÓN DEL NEGOCIO</p><h2>Reportes y analítica</h2><p>Indicadores calculados desde las reservas, servicios, clientes y costos reales.</p></div></header>
+<p id="mensaje-pagina" role="status" aria-live="polite"></p>
+<section><h2>Periodo</h2><form id="filtros-reportes" class="filtros-modulo"><label for="reporte-desde">Desde</label><input id="reporte-desde" type="date" required><label for="reporte-hasta">Hasta</label><input id="reporte-hasta" type="date" required><button type="submit">Actualizar</button></form></section>
+<section><h2>Indicadores</h2><article><h3>Clientes registrados</h3><p id="rpt-clientes">—</p></article><article><h3>Servicios publicados</h3><p id="rpt-servicios">—</p></article><article><h3>Costos del periodo</h3><p id="rpt-costos">—</p></article><article><h3>Ingresos</h3><p id="rpt-ingresos">No disponibles</p><p>No existe una fuente de pagos/ventas integrada.</p></article></section>
+<section><h2>Reservas por estado</h2><div class="tabla-contenedor"><table><thead><tr><th>Estado</th><th>Cantidad</th></tr></thead><tbody id="rpt-estados"></tbody></table></div></section>
+<section><h2>Servicios más reservados</h2><div class="tabla-contenedor"><table><thead><tr><th>Servicio</th><th>Reservas</th></tr></thead><tbody id="rpt-servicios-top"></tbody></table></div></section>
+<section><h2>Costos por categoría</h2><div class="tabla-contenedor"><table><thead><tr><th>Categoría</th><th>Total</th></tr></thead><tbody id="rpt-costos-categorias"></tbody></table></div></section>
+<section><h2>Evolución mensual</h2><div class="tabla-contenedor"><table><thead><tr><th>Mes</th><th>Reservas</th><th>Costos</th></tr></thead><tbody id="rpt-evolucion"></tbody></table></div></section>
+<footer><p>Mi Guía Turístico | Panel de gestión empresarial</p></footer></main>
+<script src="api-common.js"></script><script src="reportes-api.js"></script></body></html>

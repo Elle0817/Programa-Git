@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Administra los clientes de tu negocio turístico.">
+    <title>Gestión de clientes | Mi Guía Turístico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-api-clientes="true">
+
+    <!-- Menú lateral -->
+    <aside>
+        <div>
+            <h1>Mi Guía Turístico</h1>
+            <p>Panel de gestión</p>
+        </div>
+
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="clientes.html" aria-current="page">Clientes</a></li>
+                <li><a href="costos.html">Costos</a></li>
+                <li><a href="calendario.html">Calendario</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <a href="configuracion.html">Configuración</a>
+        </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main>
+
+        <header>
+            <div>
+                <p>ADMINISTRACIÓN DEL NEGOCIO</p>
+                <h2>Gestión de clientes</h2>
+                <p>Consulta y administra la información de los clientes de tu negocio.</p>
+            </div>
+
+            <div>
+                <button type="button">Notificaciones</button>
+                <a class="boton-enlace" href="configuracion.html#informacion-negocio">Mi negocio</a>
+            </div>
+        </header>
+
+        <!-- Indicadores -->
+        <section aria-labelledby="titulo-resumen-clientes">
+            <h2 id="titulo-resumen-clientes">Resumen de clientes</h2>
+
+            <article>
+                <h3>Total de clientes</h3>
+                <p id="indicador-total-clientes">0</p>
+                <p>Clientes registrados en la base de datos</p>
+            </article>
+
+            <article>
+                <h3>Clientes nuevos</h3>
+                <p id="indicador-clientes-nuevos">—</p>
+                <p>Clasificación pendiente de implementar</p>
+            </article>
+
+            <article>
+                <h3>Clientes frecuentes</h3>
+                <p id="indicador-clientes-frecuentes">—</p>
+                <p>Clasificación pendiente de implementar</p>
+            </article>
+
+            <article>
+                <h3>Reservas registradas</h3>
+                <p id="indicador-reservas-clientes">—</p>
+                <p>Dato pendiente de integrar con reservas</p>
+            </article>
+        </section>
+
+        <!-- Directorio de clientes -->
+        <section aria-labelledby="titulo-directorio-clientes">
+
+            <header>
+                <div>
+                    <h2 id="titulo-directorio-clientes">Directorio de clientes</h2>
+                    <p>Consulta, busca, registra y administra tus clientes.</p>
+                </div>
+
+                <button type="button" id="crear-cliente">
+                    Registrar cliente
+                </button>
+            </header>
+
+            <p id="mensaje-clientes" role="status" aria-live="polite"></p>
+
+            <section id="panel-formulario-cliente" class="panel-cliente" hidden aria-labelledby="titulo-formulario-cliente">
+                <h3 id="titulo-formulario-cliente">Registrar cliente</h3>
+                <form id="formulario-cliente" novalidate>
+                    <input type="hidden" name="idCliente">
+                    <p>Negocio asignado automáticamente: <strong id="cliente-negocio-activo">Consultando…</strong></p>
+                    <label for="cliente-nombre">Nombre completo</label>
+                    <input id="cliente-nombre" name="nombre" maxlength="150" required>
+                    <label for="cliente-correo">Correo electrónico</label>
+                    <input id="cliente-correo" name="correo" type="email" maxlength="190">
+                    <label for="cliente-telefono">Teléfono</label>
+                    <input id="cliente-telefono" name="telefono" maxlength="30">
+                    <label for="cliente-observaciones">Observaciones</label>
+                    <textarea id="cliente-observaciones" name="observaciones" rows="3"></textarea>
+                    <div class="acciones-formulario-cliente">
+                        <button type="submit">Guardar cliente</button>
+                        <button type="button" id="cancelar-cliente">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Filtros -->
+            <form id="formulario-filtros-clientes">
+                <label for="buscar-cliente">Buscar cliente</label>
+                <input
+                    type="search"
+                    id="buscar-cliente"
+                    name="buscar"
+                    placeholder="Nombre, correo o teléfono"
+                >
+
+                <label for="filtro-tipo-cliente">Tipo de cliente</label>
+                <select id="filtro-tipo-cliente" name="tipo">
+                    <option value="">Todos los clientes</option>
+                </select>
+
+                <button type="reset">Limpiar filtros</button>
+            </form>
+
+            <!-- Tabla -->
+            <div>
+                <table>
+                    <caption>Clientes registrados</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Código</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Correo electrónico</th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col">Reservas</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabla-clientes">
+                        <tr>
+                            <td colspan="7">Cargando clientes...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Resumen de resultados -->
+            <footer>
+                <p id="resumen-tabla-clientes">Cargando clientes...</p>
+            </footer>
+
+        </section>
+
+        <footer>
+            <p>Mi Guía Turístico | Panel de gestión empresarial</p>
+        </footer>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="api-common.js"></script>
+    <script src="clientes-api.js"></script>
+
+</body>
+</html>

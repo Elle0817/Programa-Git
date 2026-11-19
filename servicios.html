@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Administra el catálogo de experiencias turísticas de tu negocio.">
+    <title>Gestión de servicios | Mi Guía Turístico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-api-servicios="true">
+
+    <aside>
+        <div>
+            <h1>Mi Guía Turístico</h1>
+            <p>Panel de gestión</p>
+        </div>
+
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="servicios.html" aria-current="page">Servicios</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="costos.html">Costos</a></li>
+                <li><a href="calendario.html">Calendario</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <a href="configuracion.html">Configuración</a>
+        </div>
+    </aside>
+
+    <main>
+        <header>
+            <div>
+                <p>ADMINISTRACIÓN DEL NEGOCIO</p>
+                <h2>Gestión de servicios</h2>
+                <p>Administra las experiencias que ofrece tu negocio turístico.</p>
+            </div>
+
+            <div>
+                <button type="button">Notificaciones</button>
+                <button type="button">Mi negocio</button>
+            </div>
+        </header>
+
+        <section aria-labelledby="resumen-titulo">
+            <h2 id="resumen-titulo">Resumen</h2>
+
+            <article>
+                <h3>Total de servicios</h3>
+                <p>6</p>
+                <p>Servicios registrados</p>
+            </article>
+
+            <article>
+                <h3>Publicados</h3>
+                <p>3</p>
+                <p>Visibles para los turistas</p>
+            </article>
+
+            <article>
+                <h3>Borradores</h3>
+                <p>2</p>
+                <p>Pendientes de publicación</p>
+            </article>
+
+            <article>
+                <h3>Inactivos</h3>
+                <p>1</p>
+                <p>No disponibles para reservas</p>
+            </article>
+        </section>
+
+        <section aria-labelledby="catalogo-titulo">
+            <header>
+                <div>
+                    <h2 id="catalogo-titulo">Catálogo de experiencias</h2>
+                    <p>Consulta y administra todos tus servicios turísticos.</p>
+                </div>
+
+                <button type="button" id="crear-servicio">
+                    + Crear servicio
+                </button>
+            </header>
+
+            <!-- Buscador y filtros -->
+            <form id="formulario-filtros" action="#" method="get">
+                <label for="buscar-servicio">Buscar</label>
+                <input
+                    type="search"
+                    id="buscar-servicio"
+                    name="busqueda"
+                    placeholder="Nombre del servicio..."
+                >
+
+                <label for="categoria">Categoría</label>
+                <select id="categoria" name="categoria">
+                    <option value="">Todas</option>
+                    <option value="1">Experiencias</option>
+                </select>
+
+                <label for="estado">Estado</label>
+                <select id="estado" name="estado">
+                    <option value="">Todos</option>
+                    <option value="Publicado">Publicado</option>
+                    <option value="Borrador">Borrador</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+
+                <button type="submit">Buscar</button>
+                <button type="reset">Limpiar filtros</button>
+            </form>
+
+            <!-- Tabla de servicios -->
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Servicio</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Duración</th>
+                            <th scope="col">Cupos</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Tour histórico por Bogotá</td>
+                            <td>Cultural</td>
+                            <td>$45.000 COP</td>
+                            <td>3 horas</td>
+                            <td>15</td>
+                            <td>Publicado</td>
+                            <td>
+                                <button type="button" disabled>Editar</button>
+                                <button type="button" disabled>Ver</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Ruta gastronómica</td>
+                            <td>Gastronomía</td>
+                            <td>$80.000 COP</td>
+                            <td>4 horas</td>
+                            <td>10</td>
+                            <td>Publicado</td>
+                            <td>
+                                <button type="button" disabled>Editar</button>
+                                <button type="button" disabled>Ver</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Experiencia en la naturaleza</td>
+                            <td>Naturaleza</td>
+                            <td>$65.000 COP</td>
+                            <td>5 horas</td>
+                            <td>12</td>
+                            <td>Publicado</td>
+                            <td>
+                                <button type="button" disabled>Editar</button>
+                                <button type="button" disabled>Ver</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Tour nocturno por La Candelaria</td>
+                            <td>Cultural</td>
+                            <td>$60.000 COP</td>
+                            <td>2 horas</td>
+                            <td>12</td>
+                            <td>Borrador</td>
+                            <td>
+                                <button type="button" disabled>Editar</button>
+                                <button type="button" disabled>Ver</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Ruta de aventura</td>
+                            <td>Aventura</td>
+                            <td>$120.000 COP</td>
+                            <td>6 horas</td>
+                            <td>8</td>
+                            <td>Borrador</td>
+                            <td>
+                                <button type="button" disabled>Editar</button>
+                                <button type="button" disabled>Ver</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Recorrido cultural antiguo</td>
+                            <td>Cultural</td>
+                            <td>$35.000 COP</td>
+                            <td>2 horas</td>
+                            <td>0</td>
+                            <td>Inactivo</td>
+                            <td>
+                                <button type="button" disabled>Editar</button>
+                                <button type="button" disabled>Ver</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <footer>
+                <p>Mostrando 6 servicios de ejemplo</p>
+                <nav aria-label="Paginación del catálogo">
+                    <button type="button" disabled>Anterior</button>
+                    <button type="button" aria-current="page">1</button>
+                    <button type="button" disabled>Siguiente</button>
+                </nav>
+            </footer>
+        </section>
+
+        <!-- Modal para crear servicios -->
+        <div id="modal-servicio" class="modal-servicio" hidden>
+            <div
+                class="contenido-modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="titulo-formulario"
+            >
+                <h2 id="titulo-formulario">Crear servicio turístico</h2>
+                <p>Completa la información de la experiencia.</p>
+
+                <form id="formulario-servicio">
+                    <label for="nombre-servicio">Nombre del servicio</label>
+                    <input
+                        id="nombre-servicio"
+                        name="nombre"
+                        type="text"
+                        maxlength="100"
+                        required
+                    >
+
+                    <label for="categoria-servicio">Categoría</label>
+                    <select id="categoria-servicio" name="categoria">
+                        <option value="1">Experiencias</option>
+                    </select>
+
+                    <label for="descripcion-servicio">Descripción</label>
+                    <textarea
+                        id="descripcion-servicio"
+                        name="descripcion"
+                        rows="3"
+                        maxlength="5000"
+                    ></textarea>
+
+                    <label for="precio-servicio">Precio en pesos colombianos (COP)</label>
+                    <input
+                        id="precio-servicio"
+                        name="precio"
+                        type="number"
+                        min="0"
+                        step="1000"
+                        required
+                    >
+
+                    <label for="duracion-servicio">Duración en horas</label>
+                    <input
+                        id="duracion-servicio"
+                        name="duracion"
+                        type="number"
+                        min="1"
+                        step="1"
+                        required
+                    >
+
+                    <label for="cupos-servicio">Cupos disponibles</label>
+                    <input
+                        id="cupos-servicio"
+                        name="cupos"
+                        type="number"
+                        min="0"
+                        step="1"
+                        required
+                    >
+
+                    <label for="estado-servicio">Estado</label>
+                    <select id="estado-servicio" name="estado" required>
+                        <option value="Publicado">Publicado</option>
+                        <option value="Borrador">Borrador</option>
+                        <option value="Inactivo">Inactivo</option>
+                    </select>
+
+                    <div class="acciones-modal">
+                        <button type="button" id="cancelar-servicio">
+                            Cancelar
+                        </button>
+                        <button type="submit">Guardar servicio</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <footer>
+            <p>Mi Guía Turístico | Panel de gestión empresarial</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="api-common.js"></script>
+    <script src="servicios-api.js"></script>
+</body>
+</html>

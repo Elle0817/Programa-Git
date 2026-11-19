@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resumen de actividad del negocio turístico.">
+    <title>Dashboard | Mi Guía Turístico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Menú lateral de navegación -->
+    <aside>
+        <div>
+            <h1>Mi Guía Turístico</h1>
+            <p>Panel de gestión</p>
+        </div>
+
+        <nav aria-label="Menú principal">
+            <ul>
+                <li>
+                    <a href="index.html" aria-current="page">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="servicios.html">Servicios</a>
+                </li>
+                <li>
+                    <a href="reservas.html">Reservas</a>
+                </li>
+                <li>
+                    <a href="clientes.html">Clientes</a>
+                </li>
+                <li>
+                    <a href="costos.html">Costos</a>
+                </li>
+                <li>
+                    <a href="calendario.html">Calendario</a>
+                </li>
+                <li>
+                    <a href="reportes.html">Reportes</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div>
+            <a href="configuracion.html">Configuración</a>
+        </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main>
+
+        <!-- Encabezado -->
+        <header>
+            <div>
+                <p>ADMINISTRACIÓN DEL NEGOCIO</p>
+                <h2>Dashboard</h2>
+                <p id="dashboard-contexto">Consultando el negocio activo…</p>
+            </div>
+
+            <div>
+                <a class="boton-enlace" href="configuracion.html#preferencias-notificaciones">Notificaciones</a>
+                <a class="boton-enlace" href="configuracion.html#informacion-negocio">Mi negocio</a>
+            </div>
+        </header>
+
+        <!-- Resumen de indicadores -->
+        <section aria-labelledby="resumen-titulo">
+            <h2 id="resumen-titulo">Resumen</h2>
+
+            <article>
+                <h3>Servicios publicados</h3>
+                <p id="dashboard-servicios">—</p>
+                <p>Según el catálogo del negocio</p>
+            </article>
+
+            <article>
+                <h3>Reservas pendientes</h3>
+                <p id="dashboard-reservas-pendientes">—</p>
+                <p>Reservas por revisar</p>
+            </article>
+
+            <article>
+                <h3>Clientes registrados</h3>
+                <p id="dashboard-clientes">—</p>
+                <p>Clientes del negocio</p>
+            </article>
+
+            <article>
+                <h3>Costos del periodo</h3>
+                <p id="dashboard-costos">—</p>
+                <p>Periodo informado por Reportes</p>
+            </article>
+        </section>
+
+        <!-- Catálogo de servicios -->
+        <section aria-labelledby="servicios-titulo">
+
+            <header>
+                <div>
+                        <h2 id="servicios-titulo">Servicios del catálogo</h2>
+                    <p>Datos cargados del catálogo de este negocio.</p>
+                </div>
+
+                <a class="boton-enlace" href="servicios.html">Administrar servicios</a>
+            </header>
+
+            <!-- Buscador y filtros -->
+            <form id="dashboard-busqueda">
+
+                <label for="buscar-servicio">
+                    Buscar en el negocio
+                </label>
+
+                <input
+                    type="search"
+                    id="buscar-servicio"
+                    name="busqueda"
+                    placeholder="Módulos, servicios, clientes o reservas"
+                >
+
+                <button type="submit">
+                    Buscar
+                </button>
+
+                <button type="reset">
+                    Limpiar filtros
+                </button>
+
+            </form>
+            <div id="dashboard-resultados" role="status" aria-live="polite"></div>
+
+            <!-- Tabla de servicios -->
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Servicio</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Precio por persona</th>
+                            <th scope="col">Duración</th>
+                            <th scope="col">Cupos</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="dashboard-tabla-servicios">
+                        <tr><td colspan="7">Cargando servicios…</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginación -->
+            <footer>
+                <p id="dashboard-resumen-servicios">Cargando servicios…</p>
+
+                <nav aria-label="Paginación de servicios">
+                    <button type="button" id="dashboard-anterior" disabled>
+                        Anterior
+                    </button>
+
+                    <span id="dashboard-pagina">1</span>
+
+                    <button type="button" id="dashboard-siguiente" disabled>
+                        Siguiente
+                    </button>
+                </nav>
+            </footer>
+
+        </section>
+
+        <!-- Pie de página -->
+        <footer>
+            <p>Mi Guía Turístico | Panel de gestión empresarial</p>
+        </footer>
+
+    </main>
+
+    <script src="api-common.js"></script>
+    <script src="dashboard-api.js"></script>
+</body>
+</html>

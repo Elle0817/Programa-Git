@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es"><head><base href="/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Administra reservas reales de tu negocio turístico."><title>Reservas | Mi Guía Turístico</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<aside><div><h1>Mi Guía Turístico</h1><p>Panel de gestión</p></div><nav aria-label="Menú principal"><ul>
+<li><a href="index.html">Dashboard</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="reservas.html" aria-current="page">Reservas</a></li><li><a href="clientes.html">Clientes</a></li><li><a href="costos.html">Costos</a></li><li><a href="calendario.html">Calendario</a></li><li><a href="reportes.html">Reportes</a></li></ul></nav><div><a href="configuracion.html">Configuración</a></div></aside>
+<main><header><div><p>ADMINISTRACIÓN DEL NEGOCIO</p><h2>Gestión de reservas</h2><p>Consulta y administra reservas guardadas en la base de datos.</p></div><button type="button" id="crear-reserva">Registrar reserva</button></header>
+<p id="mensaje-pagina" role="status" aria-live="polite"></p>
+<section aria-labelledby="resumen-reservas"><h2 id="resumen-reservas">Resumen</h2>
+<article><h3>Total</h3><p id="total-reservas">—</p><p>Reservas del negocio</p></article><article><h3>Pendientes</h3><p id="pendientes-reservas">—</p></article><article><h3>Confirmadas</h3><p id="confirmadas-reservas">—</p></article><article><h3>Canceladas</h3><p id="canceladas-reservas">—</p></article></section>
+<section id="panel-formulario-reserva" class="panel-modulo" hidden><h2 id="titulo-formulario-reserva">Registrar reserva</h2>
+<form id="formulario-reserva"><input name="idReserva" type="hidden"><label for="reserva-cliente">Cliente</label><select id="reserva-cliente" name="idCliente" required></select>
+<label for="reserva-servicio">Servicio publicado</label><select id="reserva-servicio" name="idServicio" required></select>
+<label for="reserva-fecha">Fecha y hora</label><input id="reserva-fecha" name="fechaReserva" type="datetime-local" required>
+<label for="reserva-personas">Cantidad de personas</label><input id="reserva-personas" name="cantidadPersonas" type="number" min="1" step="1" required>
+<label for="reserva-observaciones">Observaciones</label><textarea id="reserva-observaciones" name="observaciones" rows="3"></textarea>
+<div class="acciones-panel"><button type="submit">Guardar reserva</button><button type="button" id="cancelar-formulario-reserva">Cerrar</button></div></form></section>
+<section id="panel-detalle-reserva" class="panel-modulo" hidden><h2>Detalle de reserva</h2><div id="detalle-reserva"></div><button type="button" id="cerrar-detalle-reserva">Cerrar</button></section>
+<section aria-labelledby="listado-reservas"><header><div><h2 id="listado-reservas">Listado de reservas</h2><p>Filtra por periodo, estado, código, cliente o servicio.</p></div></header>
+<form id="filtros-reservas" class="filtros-modulo"><label for="buscar-reserva">Buscar</label><input id="buscar-reserva" type="search" placeholder="Código, cliente o servicio">
+<label for="filtro-cliente-reserva">Cliente</label><select id="filtro-cliente-reserva"><option value="">Todos</option></select><label for="filtro-servicio-reserva">Servicio</label><select id="filtro-servicio-reserva"><option value="">Todos</option></select>
+<label for="filtro-estado-reserva">Estado</label><select id="filtro-estado-reserva"><option value="">Todos</option><option>Pendiente</option><option>Confirmada</option><option>Completada</option><option>Cancelada</option></select>
+<label for="filtro-desde-reserva">Desde</label><input id="filtro-desde-reserva" type="date"><label for="filtro-hasta-reserva">Hasta</label><input id="filtro-hasta-reserva" type="date"><button type="submit">Filtrar</button><button type="reset">Limpiar</button></form>
+<div class="tabla-contenedor"><table><caption>Reservas del negocio activo</caption><thead><tr><th>Código</th><th>Cliente</th><th>Servicio</th><th>Fecha y hora</th><th>Personas</th><th>Total</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="tabla-reservas"><tr><td colspan="8">Cargando…</td></tr></tbody></table></div><footer><p id="resumen-reservas-lista">Cargando reservas…</p></footer></section>
+<footer><p>Mi Guía Turístico | Panel de gestión empresarial</p></footer></main>
+<script src="api-common.js"></script><script src="reservas-api.js"></script></body></html>

@@ -1,0 +1,51 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+**/*secret*
+**/*credential*
+**/*credentials*
+**/credentials/**
+**/*password*
+.npmrc
+**/.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Database data and dumps (allow reviewed schema migrations)
+*.sql
+!backend/src/main/resources/db/migration/*.sql
+*.sql.gz
+*.dump
+*.sqlite
+*.sqlite3
+*.db
+
+# Runtime state, logs, temporary and generated output
+.runtime/
+**/.runtime/
+*.log
+**/logs/
+*.tmp
+*.temp
+*.swp
+*~
+**/target/
+**/build/
+**/dist/
+**/node_modules/
+**/test-results/
+**/playwright-report/
+**/.playwright/
+/evidencias/
+
+# Backups and editor/OS artifacts
+**/respaldo*/
+**/backup*/
+**/*.bak
+**/*.old
+.DS_Store
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es"><head><base href="/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Registra y consulta costos del negocio."><title>Costos | Mi Guía Turístico</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<aside><div><h1>Mi Guía Turístico</h1><p>Panel de gestión</p></div><nav aria-label="Menú principal"><ul>
+<li><a href="index.html">Dashboard</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="reservas.html">Reservas</a></li><li><a href="clientes.html">Clientes</a></li><li><a href="costos.html" aria-current="page">Costos</a></li><li><a href="calendario.html">Calendario</a></li><li><a href="reportes.html">Reportes</a></li></ul></nav><div><a href="configuracion.html">Configuración</a></div></aside>
+<main><header><div><p>ADMINISTRACIÓN DEL NEGOCIO</p><h2>Costos del negocio</h2><p>Registros y totales consultados desde MySQL.</p></div><button type="button" id="crear-costo">Registrar costo</button></header>
+<p id="mensaje-pagina" role="status" aria-live="polite"></p>
+<section><h2>Resumen del periodo filtrado</h2><article><h3>Total de costos</h3><p id="costos-total">—</p></article><article><h3>Registros encontrados</h3><p id="costos-cantidad">—</p></article></section>
+<section id="panel-formulario-costo" class="panel-modulo" hidden><h2 id="titulo-formulario-costo">Registrar costo</h2><form id="formulario-costo"><input type="hidden" name="idCosto">
+<label for="costo-concepto">Concepto</label><input id="costo-concepto" name="concepto" maxlength="180" required>
+<label for="costo-categoria">Categoría</label><select id="costo-categoria" name="idCategoriaCosto"><option value="">Sin categoría</option></select>
+<label for="costo-valor">Valor (COP)</label><input id="costo-valor" name="valor" type="number" min="0" step="0.01" required>
+<label for="costo-fecha">Fecha</label><input id="costo-fecha" name="fechaCosto" type="date" required>
+<label for="costo-observaciones">Observaciones</label><textarea id="costo-observaciones" name="observaciones" rows="3"></textarea>
+<div class="acciones-panel"><button type="submit">Guardar costo</button><button id="cerrar-formulario-costo" type="button">Cerrar</button></div></form></section>
+<section id="panel-detalle-costo" class="panel-modulo" hidden><h2>Detalle del costo</h2><div id="detalle-costo"></div><button id="cerrar-detalle-costo" type="button">Cerrar</button></section>
+<section><header><div><h2>Registros</h2><p>El esquema no incluye campo de estado; eliminar un registro lo borra de manera permanente.</p></div></header>
+<form id="filtros-costos" class="filtros-modulo"><label for="buscar-costo">Buscar</label><input id="buscar-costo" type="search" placeholder="Concepto">
+<label for="filtro-categoria-costo">Categoría</label><select id="filtro-categoria-costo"><option value="">Todas</option></select>
+<label for="costos-desde">Desde</label><input id="costos-desde" type="date"><label for="costos-hasta">Hasta</label><input id="costos-hasta" type="date"><button type="submit">Filtrar</button><button type="reset">Limpiar</button></form>
+<div class="tabla-contenedor"><table><thead><tr><th>Concepto</th><th>Categoría</th><th>Fecha</th><th>Valor</th><th>Observaciones</th><th>Acciones</th></tr></thead><tbody id="tabla-costos"><tr><td colspan="6">Cargando…</td></tr></tbody></table></div><footer><p id="resumen-costos-lista">Cargando costos…</p></footer></section>
+<footer><p>Mi Guía Turístico | Panel de gestión empresarial</p></footer></main>
+<script src="api-common.js"></script><script src="costos-api.js"></script></body></html>

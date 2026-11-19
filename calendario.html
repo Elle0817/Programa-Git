@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calendario de reservas y actividades del negocio.">
+    <title>Calendario | Mi Guía Turístico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <aside>
+        <div><h1>Mi Guía Turístico</h1><p>Panel de gestión</p></div>
+        <nav aria-label="Menú principal"><ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="clientes.html">Clientes</a></li>
+            <li><a href="costos.html">Costos</a></li>
+            <li><a href="calendario.html" aria-current="page">Calendario</a></li>
+            <li><a href="reportes.html">Reportes</a></li>
+        </ul></nav>
+        <div><a href="configuracion.html">Configuración</a></div>
+    </aside>
+
+    <main>
+        <header>
+            <div>
+                <p>ADMINISTRACIÓN DEL NEGOCIO</p>
+                <h2>Calendario</h2>
+                <p>Consulta las reservas y administra los eventos del negocio activo.</p>
+            </div>
+            <div class="acciones-panel">
+                <button class="boton-enlace" id="crear-actividad" type="button">Crear actividad</button>
+                <a class="boton-enlace" href="reservas.html?crear=1">Crear reserva</a>
+            </div>
+        </header>
+
+        <p id="mensaje-pagina" role="status" aria-live="polite"></p>
+
+        <section aria-labelledby="resumen-periodo">
+            <h2 id="resumen-periodo">Resumen del periodo</h2>
+            <article><h3>Reservas del mes</h3><p id="cal-total">—</p></article>
+            <article><h3>Actividades del mes</h3><p id="cal-actividades">—</p></article>
+            <article><h3>Reservas pendientes</h3><p id="cal-pendientes">—</p></article>
+            <article><h3>Próximas reservas</h3><p id="cal-proximas">—</p></article>
+        </section>
+
+        <section aria-labelledby="calendario-titulo">
+            <header>
+                <div>
+                    <h2 id="calendario-titulo">Calendario mensual</h2>
+                    <p>Selecciona un día para crear una actividad o elige una reserva o actividad existente.</p>
+                </div>
+                <div class="acciones-panel">
+                    <button id="mes-anterior" type="button">Mes anterior</button>
+                    <button id="mes-siguiente" type="button">Mes siguiente</button>
+                    <label for="cal-filtro-estado">Estado de reserva</label>
+                    <select id="cal-filtro-estado">
+                        <option value="">Todos</option><option>Pendiente</option><option>Confirmada</option>
+                        <option>Completada</option><option>Cancelada</option>
+                    </select>
+                </div>
+            </header>
+            <p id="fecha-seleccionada-calendario">Ningún día seleccionado</p>
+            <ul class="leyenda-calendario" aria-label="Tipos de registro">
+                <li>Reservas</li><li>Eventos y actividades del negocio</li>
+            </ul>
+            <div class="tabla-contenedor">
+                <table class="calendario-tabla">
+                    <caption id="calendario-caption">Calendario mensual de reservas y actividades</caption>
+                    <thead><tr><th>Lun</th><th>Mar</th><th>Mié</th><th>Jue</th><th>Vie</th><th>Sáb</th><th>Dom</th></tr></thead>
+                    <tbody id="calendario-cuerpo"><tr><td colspan="7">Cargando calendario…</td></tr></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="panel-formulario-actividad" aria-labelledby="titulo-formulario-actividad" hidden>
+            <h2 id="titulo-formulario-actividad">Crear actividad</h2>
+            <form id="formulario-actividad">
+                <input type="hidden" name="idActividad">
+                <label for="actividad-titulo">Título</label>
+                <input id="actividad-titulo" name="titulo" type="text" maxlength="180" required>
+                <label for="actividad-descripcion">Descripción</label>
+                <textarea id="actividad-descripcion" name="descripcion" rows="3" maxlength="10000"></textarea>
+                <label for="actividad-fecha-inicio">Fecha de inicio</label>
+                <input id="actividad-fecha-inicio" name="fechaInicio" type="date" required>
+                <label for="actividad-hora-inicio">Hora de inicio</label>
+                <input id="actividad-hora-inicio" name="horaInicio" type="time" required>
+                <label for="actividad-fecha-fin">Fecha de finalización (opcional)</label>
+                <input id="actividad-fecha-fin" name="fechaFin" type="date">
+                <label for="actividad-hora-fin">Hora de finalización (opcional)</label>
+                <input id="actividad-hora-fin" name="horaFin" type="time">
+                <label for="actividad-tipo">Tipo</label>
+                <select id="actividad-tipo" name="tipo" required>
+                    <option>Actividad</option><option>Evento</option><option>Recordatorio</option>
+                </select>
+                <label for="actividad-estado">Estado</label>
+                <select id="actividad-estado" name="estado" required>
+                    <option>Programada</option><option>Realizada</option><option>Cancelada</option>
+                </select>
+                <div class="acciones-panel">
+                    <button type="submit">Guardar actividad</button>
+                    <button id="cancelar-formulario-actividad" type="button">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="panel-detalle-actividad" aria-labelledby="detalle-actividad-titulo" hidden>
+            <h2 id="detalle-actividad-titulo">Detalle de actividad</h2>
+            <div id="detalle-actividad"></div>
+            <div class="acciones-panel">
+                <button id="editar-actividad" type="button">Editar</button>
+                <button id="eliminar-actividad" type="button">Eliminar</button>
+                <button id="cerrar-detalle-actividad" type="button">Cerrar</button>
+            </div>
+        </section>
+
+        <section aria-labelledby="actividades-periodo">
+            <h2 id="actividades-periodo">Eventos y actividades del periodo</h2>
+            <div class="tabla-contenedor"><table>
+                <thead><tr><th>Inicio</th><th>Título</th><th>Tipo</th><th>Estado</th><th>Detalle</th></tr></thead>
+                <tbody id="actividades-lista"><tr><td colspan="5">Cargando…</td></tr></tbody>
+            </table></div>
+        </section>
+
+        <section aria-labelledby="reservas-periodo">
+            <h2 id="reservas-periodo">Reservas del periodo</h2>
+            <div class="tabla-contenedor"><table>
+                <thead><tr><th>Fecha y hora</th><th>Código</th><th>Cliente</th><th>Servicio</th><th>Personas</th><th>Estado</th><th>Detalle</th></tr></thead>
+                <tbody id="calendario-lista"><tr><td colspan="7">Cargando…</td></tr></tbody>
+            </table></div>
+        </section>
+
+        <footer><p>Mi Guía Turístico | Panel de gestión empresarial</p></footer>
+    </main>
+    <script src="api-common.js"></script>
+    <script src="calendario-api.js"></script>
+</body>
+</html>

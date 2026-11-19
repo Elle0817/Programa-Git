@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Configura la información y las preferencias de tu negocio turístico.">
+    <title>Configuración | Mi Guía Turístico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Menú lateral -->
+    <aside>
+        <div>
+            <h1>Mi Guía Turístico</h1>
+            <p>Panel de gestión</p>
+        </div>
+
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="costos.html">Costos</a></li>
+                <li><a href="calendario.html">Calendario</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <a href="configuracion.html" aria-current="page">Configuración</a>
+        </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main>
+
+        <header>
+            <div>
+                <p>ADMINISTRACIÓN DEL NEGOCIO</p>
+                <h2>Configuración</h2>
+                <p>Personaliza la información y las preferencias de tu negocio turístico.</p>
+            </div>
+
+            <div>
+                <a class="boton-enlace" href="#preferencias-notificaciones">Notificaciones</a>
+                <a class="boton-enlace" href="#informacion-negocio">Mi negocio</a>
+            </div>
+        </header>
+
+        <p role="status">
+            El backend expone el contexto del negocio activo, pero todavía no ofrece operaciones
+            para consultar o editar su ficha. Los formularios de esta página se guardan solo en
+            este navegador y no modifican ni sincronizan información con MySQL.
+        </p>
+
+        <!-- Información general del negocio -->
+        <section aria-labelledby="informacion-negocio">
+            <header>
+                <div>
+                    <h2 id="informacion-negocio">Información del negocio</h2>
+                    <p>Datos de referencia locales; no actualizan la ficha del negocio en el backend.</p>
+                </div>
+            </header>
+
+            <form id="formulario-negocio">
+
+                <label for="nombre-negocio">Nombre comercial</label>
+                <input
+                    type="text"
+                    id="nombre-negocio"
+                    name="nombre"
+                    placeholder="Ej. Andes Travel"
+                    maxlength="100"
+                    required
+                >
+
+                <label for="nit-negocio">NIT o identificación tributaria</label>
+                <input
+                    type="text"
+                    id="nit-negocio"
+                    name="nit"
+                    placeholder="Número de identificación"
+                    maxlength="30"
+                >
+
+                <label for="descripcion-negocio">Descripción del negocio</label>
+                <textarea
+                    id="descripcion-negocio"
+                    name="descripcion"
+                    rows="4"
+                    maxlength="500"
+                    placeholder="Describe los servicios y experiencias que ofreces."
+                ></textarea>
+
+                <label for="direccion-negocio">Dirección</label>
+                <input
+                    type="text"
+                    id="direccion-negocio"
+                    name="direccion"
+                    maxlength="200"
+                    placeholder="Dirección comercial"
+                >
+
+                <label for="ciudad-negocio">Ciudad</label>
+                <input
+                    type="text"
+                    id="ciudad-negocio"
+                    name="ciudad"
+                    maxlength="100"
+                    placeholder="Ej. Bogotá"
+                >
+
+                <div>
+                    <button type="submit">Guardar información</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Información de contacto -->
+        <section aria-labelledby="contacto-negocio">
+            <header>
+                <div>
+                    <h2 id="contacto-negocio">Datos de contacto</h2>
+                    <p>Datos de referencia locales; no actualizan la ficha del negocio en el backend.</p>
+                </div>
+            </header>
+
+            <form id="formulario-contacto">
+
+                <label for="correo-negocio">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="correo-negocio"
+                    name="correo"
+                    placeholder="contacto@tunegocio.com"
+                >
+
+                <label for="telefono-negocio">Teléfono</label>
+                <input
+                    type="tel"
+                    id="telefono-negocio"
+                    name="telefono"
+                    maxlength="20"
+                    placeholder="Número de contacto"
+                >
+
+                <label for="sitio-negocio">Sitio web</label>
+                <input
+                    type="url"
+                    id="sitio-negocio"
+                    name="sitio"
+                    placeholder="https://www.tunegocio.com"
+                >
+
+                <label for="red-social-negocio">Red social principal</label>
+                <input
+                    type="url"
+                    id="red-social-negocio"
+                    name="redSocial"
+                    placeholder="https://www.instagram.com/tu-negocio"
+                >
+
+                <div>
+                    <button type="submit">Guardar contacto</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Preferencias de reservas -->
+        <section aria-labelledby="preferencias-reservas">
+            <header>
+                <div>
+                    <h2 id="preferencias-reservas">Preferencias de reservas</h2>
+                    <p>Define las condiciones generales de las reservas.</p>
+                </div>
+            </header>
+
+            <form id="formulario-preferencias">
+
+                <label for="anticipacion-reserva">
+                    Anticipación mínima para reservar
+                </label>
+                <select id="anticipacion-reserva" name="anticipacion">
+                    <option value="0">El mismo día</option>
+                    <option value="1">1 día antes</option>
+                    <option value="2">2 días antes</option>
+                    <option value="3">3 días antes</option>
+                    <option value="7">7 días antes</option>
+                </select>
+
+                <label for="cancelacion-reserva">
+                    Política de cancelación
+                </label>
+                <select id="cancelacion-reserva" name="cancelacion">
+                    <option value="flexible">Flexible</option>
+                    <option value="moderada">Moderada</option>
+                    <option value="estricta">Estricta</option>
+                </select>
+
+                <label for="moneda-negocio">Moneda de operación</label>
+                <select id="moneda-negocio" name="moneda">
+                    <option value="COP">Peso colombiano (COP)</option>
+                </select>
+
+                <div>
+                    <button type="submit">Guardar preferencias</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Notificaciones -->
+        <section aria-labelledby="preferencias-notificaciones">
+            <header>
+                <div>
+                    <h2 id="preferencias-notificaciones">Notificaciones</h2>
+                    <p>Selecciona los avisos que deseas recibir en el sistema.</p>
+                </div>
+            </header>
+
+            <form id="formulario-notificaciones">
+
+                <p>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="nuevaReserva"
+                            value="si"
+                            checked
+                        >
+                        Notificar nuevas reservas
+                    </label>
+                </p>
+
+                <p>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="cancelacionReserva"
+                            value="si"
+                            checked
+                        >
+                        Notificar cancelaciones
+                    </label>
+                </p>
+
+                <p>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="recordatorios"
+                            value="si"
+                            checked
+                        >
+                        Recibir recordatorios de actividades
+                    </label>
+                </p>
+
+                <p>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="resumenSemanal"
+                            value="si"
+                        >
+                        Recibir resumen semanal del negocio
+                    </label>
+                </p>
+
+                <div>
+                    <button type="submit">Guardar notificaciones</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Información del sistema -->
+        <section aria-labelledby="informacion-sistema">
+            <header>
+                <div>
+                    <h2 id="informacion-sistema">Información del sistema</h2>
+                    <p>Detalles de esta versión de Mi Guía Turístico.</p>
+                </div>
+            </header>
+
+            <p><strong>Aplicación:</strong> Mi Guía Turístico</p>
+            <p><strong>Versión:</strong> 0.1.0</p>
+            <p><strong>Tipo:</strong> Prototipo web en desarrollo</p>
+            <p>
+                Las configuraciones guardadas en esta etapa se almacenarán
+                localmente en el navegador. Todavía no se sincronizan
+                con otros dispositivos ni usuarios.
+            </p>
+        </section>
+
+        <footer>
+            <p>Mi Guía Turístico | Panel de gestión empresarial</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
